@@ -3,6 +3,7 @@ import { DeleteOrderCommand } from '../implementations/delete-order.command';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order } from 'src/orders/entities/order.entity';
 import { Repository } from 'typeorm';
+import { NotFoundException } from '@nestjs/common';
 
 @CommandHandler(DeleteOrderCommand)
 export class DeleteOrderHandler implements ICommandHandler<DeleteOrderCommand> {
@@ -16,7 +17,7 @@ export class DeleteOrderHandler implements ICommandHandler<DeleteOrderCommand> {
 
     const order = await this.orderRepository.findOne({ where: { id } });
     if (!order) {
-      throw new Error(`Order whit ID ${id} not found`);
+      throw new NotFoundException(`Order whit ID ${id} not found`);
     }
 
     await this.orderRepository.remove(order);

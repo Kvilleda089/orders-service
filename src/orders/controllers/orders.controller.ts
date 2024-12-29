@@ -9,6 +9,8 @@ import {
 } from '@nestjs/common';
 import { OrdersService } from '../services/orders/orders.service';
 import { OrderStatus } from '../entities/order.entity';
+import { CreateOrderDTO } from '../dtos/create-order.dto';
+import { OrderResponseDTO } from '../dtos/order-response.dto';
 
 @Controller('orders')
 export class OrdersController {
@@ -16,15 +18,16 @@ export class OrdersController {
 
   @Post()
   async createOrder(
-    @Body('customerName') customerName: string,
-    @Body('totalAmount') totalAmount: number,
-  ) {
-    return await this.orderService.createOrder(customerName, totalAmount);
+    @Body() createDto: CreateOrderDTO,
+  ): Promise<OrderResponseDTO> {
+    const order = await this.orderService.createOrder(createDto);
+    return new OrderResponseDTO(order);
   }
 
   @Get(':id')
-  async getOrderById(@Param('id') id: string) {
-    return this.orderService.getOrderById(id);
+  async getOrderById(@Param('id') id: string): Promise<OrderResponseDTO> {
+    const order = await this.orderService.getOrderById(id);
+    return new OrderResponseDTO(order);
   }
 
   @Get()
@@ -37,7 +40,7 @@ export class OrdersController {
     @Param('id') id: string,
     @Body('status') status: OrderStatus,
   ) {
-    return this.orderService.updateOrder(id, status);
+    return this.orderService.updateOrderStatus(id, status);
   }
 
   @Delete(':id')

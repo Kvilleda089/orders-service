@@ -3,6 +3,7 @@ import { GetOrderByIdQuery } from '../implementations/get-order-by-id.query';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Order } from 'src/orders/entities/order.entity';
 import { Repository } from 'typeorm';
+import { NotFoundException } from '@nestjs/common';
 
 @QueryHandler(GetOrderByIdQuery)
 export class GetOrderByIdHandler implements IQueryHandler<GetOrderByIdQuery> {
@@ -15,7 +16,9 @@ export class GetOrderByIdHandler implements IQueryHandler<GetOrderByIdQuery> {
     const { id } = query;
     const order = await this.orderRepository.findOne({ where: { id } });
 
-    if (!order) throw new Error(`Order with ID ${id} not found`);
+    if (!order) {
+      throw new NotFoundException(`Order with ID ${id} not found`);
+    }
 
     return order;
   }

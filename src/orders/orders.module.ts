@@ -6,9 +6,9 @@ import { OrdersController } from './controllers//orders.controller';
 import { OrdersService } from './services/orders/orders.service';
 import { CreateOrderHandler } from './commands/handlers/create-order.handler';
 import { DeleteOrderHandler } from './commands/handlers/delete-order.handler';
-import { UpdateOrderHandler } from './commands/handlers/update-order.handler';
+import { UpdateOrderStatusHandler } from './commands/handlers/update-order-status.handler';
 import { GetOrderByIdHandler } from './queries/handlers/get-order-by-id.handler';
-import { GetOrdersHandler } from './queries/handlers/get-orders.handler';
+import { GetAllOrdersQuery } from './queries/handlers/get-all-orders.handler';
 
 @Module({
   imports: [TypeOrmModule.forFeature([Order]), CqrsModule],
@@ -16,9 +16,9 @@ import { GetOrdersHandler } from './queries/handlers/get-orders.handler';
     OrdersService,
     CreateOrderHandler,
     DeleteOrderHandler,
-    UpdateOrderHandler,
+    UpdateOrderStatusHandler,
     GetOrderByIdHandler,
-    GetOrdersHandler,
+    GetAllOrdersQuery,
   ],
   controllers: [OrdersController],
   exports: [OrdersService],

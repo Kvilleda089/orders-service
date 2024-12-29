@@ -12,11 +12,7 @@ export class CreateOrderHandler implements ICommandHandler<CreateOrderCommand> {
   ) {}
 
   async execute(command: CreateOrderCommand): Promise<Order> {
-    const { customerName, totalAmount } = command;
-
-    if (!customerName) throw new Error(`Customer name is Required.`);
-    if (totalAmount <= 0)
-      throw new Error(`Total amount must be greater than 0`);
+    const { customerName, totalAmount } = command.createOrderDto;
 
     const order = this.orderRepository.create({ customerName, totalAmount });
     return await this.orderRepository.save(order);

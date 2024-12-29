@@ -1,6 +1,5 @@
+import { CreateOrderDTO } from 'src/orders/dtos/create-order.dto';
+
 export class CreateOrderCommand {
-  constructor(
-    public readonly customerName: string,
-    public readonly totalAmount: number,
-  ) {}
+  constructor(public readonly createOrderDto: CreateOrderDTO) {}
 }
