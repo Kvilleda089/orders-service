@@ -14,11 +14,11 @@ export class UpdateOrderStatusHandler
     private readonly orderRepository: Repository<Order>,
   ) {}
 
-  async execute(command: UpdateOrderStatusCommand): Promise<any> {
+  async execute(command: UpdateOrderStatusCommand): Promise<Order> {
     const { id, status } = command;
     const order = await this.orderRepository.findOne({ where: { id } });
-
     if (!order) {
+      console.log(order);
       throw new NotFoundException(`Order with ID ${id} not found`);
     }
 

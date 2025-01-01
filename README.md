@@ -32,6 +32,24 @@
 $ npm install
 ```
 
+## Initial settings to be able to use the application:
+
+First, you need to clone the following repository
+
+```
+https://github.com/Kvilleda089/orders-script.git
+
+```
+
+Note: Follow all the steps found there. This will help us to have our database.
+
+Once our database has been cloned and created, follow these steps.
+
+1. We need to create a .env file in the root of the project.
+2. Then, in the .env.template file we can copy and paste in the .env and add the database connection variables.
+
+Note: It is important that we have our database running locally with docker, so that after running npm run start it can connect correctly.
+
 ## Compile and run the project
 
 ```bash
@@ -44,6 +62,14 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+
+## Swagger Documentation
+
+```
+URL: http://localhost:3000/api#/
+```
+
+ 
 
 ## Run tests
 
