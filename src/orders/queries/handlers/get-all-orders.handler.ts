@@ -1,7 +1,7 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { GetOrdersQuery } from '../implementations/get-orders.query';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Order } from 'src/orders/entities/order.entity';
+import { Order } from '../../entities/order.entity';
 import { Repository } from 'typeorm';
 
 @QueryHandler(GetOrdersQuery)

@@ -1,7 +1,7 @@
 import { IQueryHandler, QueryHandler } from '@nestjs/cqrs';
 import { GetOrderByIdQuery } from '../implementations/get-order-by-id.query';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Order } from 'src/orders/entities/order.entity';
+import { Order } from '../../entities/order.entity';
 import { Repository } from 'typeorm';
 import { NotFoundException } from '@nestjs/common';
 

@@ -1,7 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { CreateOrderCommand } from '../implementations/create-order.command';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Order } from 'src/orders/entities/order.entity';
+import { Order } from '../../entities/order.entity';
 import { Repository } from 'typeorm';
 
 @CommandHandler(CreateOrderCommand)

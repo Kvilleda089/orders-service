@@ -1,7 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { DeleteOrderCommand } from '../implementations/delete-order.command';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Order } from 'src/orders/entities/order.entity';
+import { Order } from '../../entities/order.entity';
 import { Repository } from 'typeorm';
 import { NotFoundException } from '@nestjs/common';
 

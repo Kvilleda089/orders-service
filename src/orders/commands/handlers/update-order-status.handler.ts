@@ -1,7 +1,7 @@
 import { CommandHandler, ICommandHandler } from '@nestjs/cqrs';
 import { UpdateOrderStatusCommand } from '../implementations/update-order-status.command';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Order, OrderStatus } from 'src/orders/entities/order.entity';
+import { Order, OrderStatus } from '../../entities/order.entity';
 import { Repository } from 'typeorm';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
 
