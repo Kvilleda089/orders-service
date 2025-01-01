@@ -5,5 +5,14 @@
   "testRegex": ".e2e-spec.ts$",
   "transform": {
     "^.+\\.(t|j)s$": "ts-jest"
-  }
+  },
+  "collectCoverage": true,
+  "collectCoverageFrom": [
+    "src/**/*.ts",
+    "!src/main.ts", 
+    "!src/**/*.module.ts", 
+    "!src/**/index.ts"
+  ],
+  "coverageDirectory": "./coverage/e2e",
+  "coverageReporters": ["json", "html", "lcov", "text"]
 }
