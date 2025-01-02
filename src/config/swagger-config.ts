@@ -5,7 +5,7 @@ import { orderExample } from '../documents/example/order-example';
 export function setupSwagger(app: INestApplication): void {
   const config = new DocumentBuilder()
     .setTitle('API Orders-service')
-    .setDescription('API para manejar pedidos y su gestion')
+    .setDescription('API for order management and handling')
     .setVersion('1.0')
     .addTag('orders')
     .build();
@@ -19,7 +19,7 @@ export function setupSwagger(app: INestApplication): void {
 function addExamplesToSwagger(document: any) {
   document.paths['/orders'] = {
     get: {
-      summary: 'Obtener lista de órdenes',
+      summary: 'Obtener lista de ordenes',
       responses: {
         200: {
           description: 'Lista de órdenes obtenida con éxito',
