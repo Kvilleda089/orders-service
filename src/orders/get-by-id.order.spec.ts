@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { GetOrderByIdHandler } from '../src/orders/queries/handlers/get-order-by-id.handler';
-import { Order, OrderStatus } from '../src/orders/entities/order.entity';
-import { GetOrderByIdQuery } from '../src/orders/queries/implementations/get-order-by-id.query';
+import { GetOrderByIdHandler } from '../orders/queries/handlers/get-order-by-id.handler';
+import { Order, OrderStatus } from '../orders/entities/order.entity';
+import { GetOrderByIdQuery } from '../orders/queries/implementations/get-order-by-id.query';
 import { NotFoundException } from '@nestjs/common';
 
 describe('GetOrderByIdHandler', () => {

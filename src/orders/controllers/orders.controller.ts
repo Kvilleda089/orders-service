@@ -32,7 +32,7 @@ export class OrdersController {
 
   @Get()
   async getAllOrders() {
-    return this.orderService.getAllOrders();
+    return await this.orderService.getAllOrders();
   }
 
   @Put(':id/status')
@@ -40,11 +40,11 @@ export class OrdersController {
     @Param('id') id: string,
     @Body('status') status: OrderStatus,
   ) {
-    return this.orderService.updateOrderStatus(id, status);
+    return await this.orderService.updateOrderStatus(id, status);
   }
 
   @Delete(':id')
   async DeleteOrderCommand(@Param('id') id: string) {
-    return this.orderService.deleteOrder(id);
+    return await this.orderService.deleteOrder(id);
   }
 }

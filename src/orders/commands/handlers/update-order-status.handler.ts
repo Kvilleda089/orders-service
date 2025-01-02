@@ -18,7 +18,6 @@ export class UpdateOrderStatusHandler
     const { id, status } = command;
     const order = await this.orderRepository.findOne({ where: { id } });
     if (!order) {
-      console.log(order);
       throw new NotFoundException(`Order with ID ${id} not found`);
     }
 

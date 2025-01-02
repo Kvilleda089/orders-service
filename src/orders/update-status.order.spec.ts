@@ -3,8 +3,8 @@ import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { plainToClass } from 'class-transformer';
 import { BadRequestException, NotFoundException } from '@nestjs/common';
-import { UpdateOrderStatusHandler } from '../src/orders/commands/handlers/update-order-status.handler';
-import { Order, OrderStatus } from '../src/orders/entities/order.entity';
+import { UpdateOrderStatusHandler } from '../orders/commands/handlers/update-order-status.handler';
+import { Order, OrderStatus } from '../orders/entities/order.entity';
 
 describe('UpdateOrderStatusHandler', () => {
   let handler: UpdateOrderStatusHandler;

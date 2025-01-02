@@ -1,9 +1,9 @@
 import { Test, TestingModule } from '@nestjs/testing';
-import { Order } from '../src/orders/entities/order.entity';
+import { Order } from '../orders/entities/order.entity';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { CreateOrderHandler } from '../src/orders/commands/handlers/create-order.handler';
-import { CreateOrderCommand } from '../src/orders/commands/implementations/create-order.command';
+import { CreateOrderHandler } from '../orders/commands/handlers/create-order.handler';
+import { CreateOrderCommand } from '../orders/commands/implementations/create-order.command';
 import { plainToClass } from 'class-transformer';
 import { CqrsModule } from '@nestjs/cqrs';
 

@@ -1,7 +1,7 @@
 import { Repository } from 'typeorm';
-import { DeleteOrderHandler } from '../src/orders/commands/handlers/delete-order.handler';
+import { DeleteOrderHandler } from '../orders/commands/handlers/delete-order.handler';
 import { Test, TestingModule } from '@nestjs/testing';
-import { Order } from '../src/orders/entities/order.entity';
+import { Order } from '../orders/entities/order.entity';
 import { getRepositoryToken } from '@nestjs/typeorm';
 import { NotFoundException } from '@nestjs/common';
 

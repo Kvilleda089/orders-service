@@ -1,12 +1,12 @@
 import { Injectable } from '@nestjs/common';
 import { CommandBus, QueryBus } from '@nestjs/cqrs';
-import { CreateOrderCommand } from 'src/orders/commands/implementations/create-order.command';
-import { DeleteOrderCommand } from 'src/orders/commands/implementations/delete-order.command';
-import { UpdateOrderStatusCommand } from 'src/orders/commands/implementations/update-order-status.command';
-import { CreateOrderDTO } from 'src/orders/dtos/create-order.dto';
-import { Order, OrderStatus } from 'src/orders/entities/order.entity';
-import { GetOrderByIdQuery } from 'src/orders/queries/implementations/get-order-by-id.query';
-import { GetOrdersQuery } from 'src/orders/queries/implementations/get-orders.query';
+import { CreateOrderCommand } from '../../commands/implementations/create-order.command';
+import { DeleteOrderCommand } from '../../commands/implementations/delete-order.command';
+import { UpdateOrderStatusCommand } from '../../commands/implementations/update-order-status.command';
+import { CreateOrderDTO } from '../../dtos/create-order.dto';
+import { Order, OrderStatus } from '../../entities/order.entity';
+import { GetOrderByIdQuery } from '../../queries/implementations/get-order-by-id.query';
+import { GetOrdersQuery } from '../../queries/implementations/get-orders.query';
 
 @Injectable()
 export class OrdersService {

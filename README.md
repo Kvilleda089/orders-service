@@ -61,15 +61,19 @@ $ npm run start:dev
 
 # production mode
 $ npm run start:prod
+
 ```
+
+
+## Scripts Postman
+
+In the scripts-postman directory you will find the scripts to place in postman
 
 ## Swagger Documentation
 
 ```
 URL: http://localhost:3000/api#/
 ```
-
- 
 
 ## Run tests
 
@@ -81,5 +85,5 @@ $ npm run test
 $ npm run test:e2e
 
 # test coverage
-$ npm run test:cov:e2e
+$ npm run test:cov
 ```

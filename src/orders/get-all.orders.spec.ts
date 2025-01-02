@@ -1,10 +1,9 @@
 import { Test } from '@nestjs/testing';
 import { Repository } from 'typeorm';
 import { getRepositoryToken } from '@nestjs/typeorm';
-import { GetAllOrdersQuery } from '../src/orders/queries/handlers/get-all-orders.handler';
-import { Order, OrderStatus } from '../src/orders/entities/order.entity';
+import { GetAllOrdersQuery } from '../orders/queries/handlers/get-all-orders.handler';
+import { Order, OrderStatus } from '../orders/entities/order.entity';
 
-//Test GetAllOrders
 describe('GetAllOrdersQuery', () => {
   let queryHandler: GetAllOrdersQuery;
   let repository: Repository<Order>;
