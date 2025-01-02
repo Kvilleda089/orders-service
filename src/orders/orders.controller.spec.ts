@@ -111,7 +111,6 @@ describe('OrdersController', () => {
 
       const response = await ordersController.updateOrder(id, status);
       expect(response.status).toEqual(status);
-      console.log(response);
     });
   });
   describe('deleteOrderCommand', () => {
